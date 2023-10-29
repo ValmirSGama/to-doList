@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,6 +19,7 @@ public class UserModel {
     @GeneratedValue(generator = "UUID") // Gerador de UUID automatico
     private UUID id; // UUID é mais seguro que o id sequencial do banco de dados
 
+    @Column(unique = true) // define uma constraint/unicidade em coluna
     private String userName;
     private String name;
     private String password;
